@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TextSelector from './TextSelector';
 
 class App extends Component {
   state = {
@@ -15,10 +16,10 @@ class App extends Component {
     return (
       <>
         <h1>Hello!</h1>
-        <label>
-          Text: 
-          <input type="text" value={this.state.text} onChange={this.handleChange}></input>
-        </label>
+        <TextSelector text={this.state.text} handleChange={this.handleChange} />
+        <div>
+          {this.state.text}
+        </div>
       </>
     )
   }
