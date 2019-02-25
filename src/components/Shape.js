@@ -6,8 +6,17 @@ function Shape({
   fontColor, 
   backgroundColor
 }) {
+
+  const divStyle = {
+    color: fontColor,
+    backgroundColor: backgroundColor,
+    width: '200px',
+    height: '200px',
+    textAlign: 'center' 
+  };
+
   return (
-    <div style={{ color: fontColor, backgroundColor: backgroundColor }}>
+    <div style={divStyle}>
       {text}
     </div>
   );
