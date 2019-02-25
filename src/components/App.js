@@ -13,12 +13,19 @@ class App extends Component {
   }
 
   render() {
+    const { text, fontColor, backgroundColor } = this.state;
+    const headerStyle = {
+      color: this.state.fontColor
+    };
     return (
       <>
         <h1>Hello!</h1>
-        <TextSelector text={this.state.text} handleChange={this.handleChange} />
+        <TextSelector text={text} handleChange={this.handleChange} />
+        <input type="color" name="fontColor" value={fontColor} onChange={this.handleChange} />
         <div>
-          {this.state.text}
+          <p style={headerStyle}>
+            {text}
+          </p>
         </div>
       </>
     )
