@@ -1,32 +1,34 @@
-# React Quiz
+# React Practice
 
 ## Components
 
 * `App.js`
   * Container component
-* `ColorSelector.js`
+* `AddDogForm.js`
+  * Container component
+  * from that takes dog name, age, and weight
+  * onSubmit add dog to dogs list
+* `Dogs.js`
   * Presentational/Functional component
-  * Color input to change font color
-  * Color input to change background color
-* `TextSelector.js`
+  * Display a list of dogs
+* `Dog.js`
   * Presentational/Functional component
-  * Text input
-* `Shape.js`
-  * Presentational/Functional component
-  * takes `text`, `color` and `backgroundColor` props
-  * Should display `text`
-  * Should change `color` and `backgroundColor` based on props
-  * HINT: Use `<div style={{ width: '100px', height: '100px' }}>` to pass in styles
+  * Display a dog's name, age, and weight
 
 
 ## Tests
 
-Snapshot test all components. Use `toMatchSnapshot()`
+Snapshot test all components with enzyme. Use `toMatchSnapshot()`
 to create a snapshot.
 
-## Rubric
+Enzyme test your AddDogForm. Simulate a submit and make sure the proper values
+are passed.
 
-* Tests: 10pts
-* Components: 20pts
-* Clean style: 5pts
-* State management: 15pts
+## Bonus
+
+* Add `react-router-dom`
+  * Create a route to `/` and landing page with a link to `/dogs`
+  * Create a route to `/dogs` with a link to `/dog/:id`
+  * Create a `DogDetail` component that displays a dog by id
+    * HINT: You'll need to extract your dogs array. The id is the index
+      of the dog in the array.

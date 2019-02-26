@@ -1,27 +1,28 @@
-import React, { Component } from 'react';
-import TextSelector from './TextSelector';
-import ColorSelector from './ColorSelector';
-import Shape from './Shape';
+import React, { PureComponent } from 'react';
+import AddDogForm from './AddDogForm';
 
-class App extends Component {
+class App extends PureComponent {
   state = {
-    text: '',
-    fontColor: '',
-    backgroundColor: ''
-  }
-  
+    name: '',
+    age: '',
+    weight: ''
+  };
+
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
-  }
+  };
 
   render() {
-    const { text, fontColor, backgroundColor } = this.state;
+    const { name, age, weight } = this.state;
     return (
       <>
-        <h1>Font Customizer</h1>
-        <TextSelector text={text} handleChange={this.handleChange} />
-        <ColorSelector fontColor={fontColor} backgroundColor={backgroundColor} handleChange={this.handleChange} />
-        <Shape text={text} fontColor={fontColor} backgroundColor={backgroundColor} />
+      <h1>Enter Pet Info!</h1>
+      <AddDogForm 
+        name={name}
+        age={age}
+        weight={weight}
+        handleChange={this.handleChange}  
+      />
       </>
     );
   }
