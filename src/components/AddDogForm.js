@@ -11,7 +11,7 @@ class AddDogForm extends PureComponent {
     dogs: []
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     const { name, age, weight } = this.props;
     this.setState(state => ({
@@ -27,7 +27,7 @@ class AddDogForm extends PureComponent {
             <input type="text" name="name" value={this.props.name} onChange={this.props.handleChange} />
           </label>
           <label>Age:
-            <input type="text" name="age" value={this.props.age} onChange={this.props.handleChange} />
+            <input type="number" name="age" value={this.props.age} onChange={this.props.handleChange} />
           </label>
           <label>Weight:
             <input type="text" name="weight" value={this.props.weight} onChange={this.props.handleChange} />
@@ -45,7 +45,7 @@ class AddDogForm extends PureComponent {
 
 AddDogForm.propTypes = {
   name: PropTypes.string.isRequired,
-  age: PropTypes.string.isRequired,
+  age: PropTypes.number.isRequired,
   weight: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired
 };

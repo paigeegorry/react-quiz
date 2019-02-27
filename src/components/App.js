@@ -4,7 +4,7 @@ import AddDogForm from './AddDogForm';
 class App extends PureComponent {
   state = {
     name: '',
-    age: '',
+    age: 0,
     weight: ''
   };
 
@@ -19,7 +19,7 @@ class App extends PureComponent {
       <h1>Enter Pet Info!</h1>
       <AddDogForm 
         name={name}
-        age={age}
+        age={Number.parseInt(age)}
         weight={weight}
         handleChange={this.handleChange}  
       />
